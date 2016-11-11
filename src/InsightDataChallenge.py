@@ -5,10 +5,10 @@ def look_for_friend(k1, k2, d, n):
         next_level = set()
         for x in current_level:
             visited.add(x)
-            if k2 in d[x]:
-                return True
-            else:
-                for child in d[x]:
+            for child in d[x]:
+                if k2 == child:
+                    return True
+                else:
                     if child not in visited:
                         next_level.add(child)
         current_level = next_level
